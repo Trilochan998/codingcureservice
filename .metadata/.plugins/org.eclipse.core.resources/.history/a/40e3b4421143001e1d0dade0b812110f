@@ -1,0 +1,5 @@
+package com.codingcure.controller;
+
+public class CommentController {
+
+}

@@ -1,0 +1,23 @@
+package com.codingcure.controller;
+
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codingcure.dto.ApiResponse;
+import com.codingcure.entity.CommentBo;
+
+@RestController
+@RequestMapping("/api")
+public class CommentController {
+	
+	
+	@PostMapping("/saveComment")
+	public ResponseEntity<ApiResponse> saveComment(@RequestBody CommentBo  bo)
+	{
+		
+	}
+}

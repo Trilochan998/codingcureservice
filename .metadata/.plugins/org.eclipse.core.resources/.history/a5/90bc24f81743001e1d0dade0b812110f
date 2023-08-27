@@ -1,0 +1,17 @@
+package com.codingcure.repositary;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.codingcure.entity.CommentBo;
+
+@Repository
+public interface CommentRepositary extends JpaRepository<CommentBo,Long> {
+	 @Query("SELECT cmt FROM CommentBo cmt WHERE cmt.commentType = :commentType ORDER BY cmt.commentDate DESC")
+	    List<CommentBo> findByCommentTypeOrderByDateDesc(@Param("commentType") String commentType);
+
+}

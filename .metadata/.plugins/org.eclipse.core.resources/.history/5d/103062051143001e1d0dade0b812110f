@@ -1,0 +1,5 @@
+package com.codingcure.dto;
+
+public class ApiResponse {
+
+}

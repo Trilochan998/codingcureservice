@@ -1,0 +1,9 @@
+package com.codingcure.service;
+
+import com.codingcure.entity.CommentBo;
+
+public interface CommentService {
+
+	CommentBo saveComment(CommentBo bo);
+
+}

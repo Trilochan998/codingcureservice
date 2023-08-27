@@ -1,0 +1,12 @@
+package com.codingcure.entity;
+
+import java.sql.Date;
+
+import org.springframework.data.jpa.repository.query.JpqlParser.Date_time_timestamp_literalContext;
+
+public class CommentBo {
+	private Long commentId;
+	private String useName;
+	private String comment;
+	private Date_time_timestamp_literalContext date;
+}

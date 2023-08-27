@@ -1,0 +1,28 @@
+package com.codingcure.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.codingcure.entity.CommentBo;
+import com.codingcure.repositary.CommentRepositary;
+
+@Service
+public class CommentServiceImpl implements CommentService{
+	
+	@Autowired
+	private CommentRepositary commentRepositary;
+	
+	@Override
+	public CommentBo saveComment(CommentBo bo) {
+		// TODO Auto-generated method stub
+		return commentRepositary.save(bo);
+	}
+	
+	@Override
+	public List<CommentBo> getComments(CommentBo bo) {
+		// TODO Auto-generated method stub
+		return commentRepositary.findByCommentTypeOrderByCommentDateDesc(bo.getCommentType());
+	}
+}

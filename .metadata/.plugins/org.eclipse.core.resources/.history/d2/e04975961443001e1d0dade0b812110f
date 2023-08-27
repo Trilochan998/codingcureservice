@@ -1,0 +1,29 @@
+package com.codingcure.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codingcure.entity.CommentBo;
+import com.codingcure.service.CommentService;
+
+@RestController
+@RequestMapping("/api")
+public class CommentController {
+	
+	@Autowired
+	private CommentService commentService;
+	
+	
+	@PostMapping("/saveComment")
+	public ResponseEntity<String> saveComment(@RequestBody CommentBo  bo)
+	{
+		CommentBo commentBo = commentService.saveComment(bo);
+		return new ResponseEntity<String>("comment sent Succesfully", HttpStatusCode.valueOf(201));
+	}
+}

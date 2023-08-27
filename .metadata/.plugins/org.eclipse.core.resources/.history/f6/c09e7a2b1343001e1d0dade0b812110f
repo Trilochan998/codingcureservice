@@ -1,0 +1,5 @@
+package com.codingcure.constants;
+
+public class ConstantsValue {
+	public static final SUCCESS_MESSAGE = "comment sent Succesfully";
+}

@@ -1,0 +1,7 @@
+package com.codingcure.repositary;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommentRepositary extends JpaRepository<T, ID> {
+
+}

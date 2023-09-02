@@ -44,8 +44,10 @@ public class CommentController {
 	{
 		System.out.println(commentType);
 		List<CommentBo> commentList=commentService.getComments(commentType);
+		ResponseEntity<List<CommentBo>> responseEntity = new ResponseEntity<List<CommentBo>>(commentList, HttpStatusCode.valueOf(ConstantsValue.SUCCESS_CODE));
+		System.out.println(responseEntity);
 		
-			return new ResponseEntity<List<CommentBo>>(commentList, HttpStatusCode.valueOf(ConstantsValue.SUCCESS_CODE)); 
+			return responseEntity;
 	}
 	
 	
